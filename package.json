@@ -1,0 +1,34 @@
+{
+  "name": "suite",
+  "private": true,
+  "scripts": {
+    "release:version": "lerna version --exact",
+    "release:build": "lerna run --stream --scope \"@appbuckets/*\" build",
+    "release:publish": "lerna publish from-package --contents build"
+  },
+  "devDependencies": {
+    "@optimize-lodash/rollup-plugin": "^2.1.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@types/get-value": "^3.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.3.0",
+    "@typescript-eslint/parser": "^5.3.0",
+    "eslint": "^8.1.0",
+    "eslint-config-airbnb-typescript": "^14.0.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "fast-glob": "^3.2.7",
+    "lerna": "^4.0.0",
+    "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.59.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.4"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
