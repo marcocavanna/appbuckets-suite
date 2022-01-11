@@ -36,7 +36,7 @@
     "prettier": "prettier --config ../../.prettierrc --write \"build/**/*{.js,.ts}\""
   },
   "dependencies": {
-    "@appbuckets/utils": "0.1.0",
+    "@appbuckets/utils": "0.2.0",
     "natural-compare": "^1.4.0"
   },
   "devDependencies": {
