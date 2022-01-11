@@ -18,7 +18,7 @@ type ArrayPathImpl<K extends string | number, V> = V extends Primitive
     ? U extends Primitive ? never : `${K}` | `${K}.${ArrayPath<V>}`
     : `${K}.${ArrayPath<V>}`;
 
-type Path<T> = T extends ReadonlyArray<infer V>
+export type Path<T> = T extends ReadonlyArray<infer V>
   ? IsTuple<T> extends true
     ? { [K in TupleKey<T>]-?: PathImpl<K & string, T[K]>; }[TupleKey<T>]
     : PathImpl<ArrayKey, V>
@@ -50,7 +50,7 @@ type PathValue<T, P extends Path<T> | ArrayPath<T>> = P extends `${infer K}.${in
 // eslint-disable-next-line max-len
 type NestedValue<TValue extends unknown[] | Record<string, unknown> | Map<unknown, unknown> = unknown[] | Record<string, unknown>> =
   {
-    [$NestedValue]: never;
+    [$NestedValue: string]: never;
   }
   & TValue;
 // eslint-disable-next-line max-len
