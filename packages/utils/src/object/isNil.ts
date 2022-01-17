@@ -1,3 +1,3 @@
 export default function isNil(value: any) {
-  return value != null;
+  return value == null;
 }
